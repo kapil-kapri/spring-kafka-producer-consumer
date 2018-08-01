@@ -1,0 +1,31 @@
+kafka:
+    auto:
+        commit:
+            interval:
+                ms: 1000
+    enable:
+        auto:
+            commit: true
+    group:
+        id: inventory-timelime_consumer-group-1
+    key:
+        deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        serializer: org.apache.kafka.common.serialization.StringSerializer
+    offset:
+        reset:
+            config: earliest
+    producer:
+        acks: 1
+        compression_type: lz4
+        lingerms: 5
+        retries: 3
+    timeline:
+        topics: fynd-json-inventory-interfaces-suppress_brand_store,fynd-json-inventory-interfaces-article_update
+    topic:
+        article_update: fynd-json-inventory-interfaces-article_update
+        suppress_brand_store: fynd-json-inventory-interfaces-suppress_brand_store
+    value:
+        deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        serializer: org.apache.kafka.common.serialization.StringSerializer
+server:
+    port: 8080

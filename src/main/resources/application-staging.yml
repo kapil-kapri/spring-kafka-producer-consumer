@@ -1,0 +1,5 @@
+kafka:
+    bootstrap:
+        servers: 13.127.46.131:9092
+server:
+    port: 8080
